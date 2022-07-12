@@ -1,4 +1,4 @@
-//* gcc -o output atoa.c && output
+//* gcc -o output itoa.c && output
 
 #include <stdio.h>
 #include <math.h>
@@ -14,14 +14,14 @@ int main(int argc, char const *argv[])
     // itoa(n1, s);
     // printf("%d %s\n",n1, s);
 
-    // int n2 = 123;
-    // itoa(n2, s);
-    // printf("%d %s\n",n2, s);
+    int n2 = 123;
+    itoa(n2, s);
+    printf("%d %s\n",n2, s);
 
     // -2^(wordwide-1) = -2147483648
-    int n3 = -pow(2, 31);
-    itoa(n3, s);
-    printf("%d %s\n",n3, s);
+    // int n3 = -pow(2, 31);
+    // itoa(n3, s);
+    // printf("%d %s\n",n3, s);
     
     return 0;
 }
@@ -36,7 +36,7 @@ void itoa(int n, char s[]) {
 
     i = 0;
     do {
-        printf("%d\n", n%10);
+        // printf("%d\n", n%10);
         s[i++] = n % 10 + '0';
     } while ((n /= 10) > 0);
 
@@ -45,5 +45,6 @@ void itoa(int n, char s[]) {
     }
 
     s[i] = '\0';
+    // reverse the string because the digits are generated in the wrong order (lower order digits are available before high order digits):
     reverse(s);
 }
