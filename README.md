@@ -10,3 +10,4 @@ Convert n to characters in s. Section 3.6 and 4.10 of The C Programming Language
 - Splitting source file into multiple files.
 - Recursion in C.
 - putchar() to put one char to output stream in C.
+- Static internal automatic variables in C.

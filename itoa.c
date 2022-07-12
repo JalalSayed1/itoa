@@ -1,8 +1,9 @@
 
-#include <stdio.h>
 #include "reverse.c"
+#include <stdio.h>
 
 void itoa(int n, char s[]);
+void itoa_recursively(int n, char s[]);
 
 void itoa(int n, char s[]) {
     int i, sign;
@@ -23,5 +24,30 @@ void itoa(int n, char s[]) {
 
     s[i] = '\0';
     // reverse the string because the digits are generated in the wrong order (lower order digits are available before high order digits):
+    reverse(s);
+}
+
+void itoa_recursively(int n, char s[]) {
+
+    static int i;
+    static int sign;
+
+    if (n < 0) {
+        sign = -1;
+        n = -n;
+    }
+
+    s[i++] = n % 10 + '0';
+
+    if ((n /= 10) > 0) {
+        itoa_recursively(n, s);
+    }
+
+    if (sign < 0) {
+        s[i++] = '-';
+    }
+
+    s[i++] = '\0';
+
     reverse(s);
 }
