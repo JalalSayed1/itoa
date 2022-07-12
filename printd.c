@@ -4,7 +4,7 @@ void printd(int n);
 
 /**
  * @brief Convert an integer to a string and print it recursively.
- * 
+ *
  * @param n The integer to convert and print.
  */
 void printd(int n) {
@@ -20,5 +20,4 @@ void printd(int n) {
     }
     // get the char of the last digit:
     putchar(n % 10 + '0');
-
 }

@@ -49,5 +49,6 @@ void itoa_recursively(int n, char s[]) {
 
     s[i++] = '\0';
 
-    reverse(s);
+    // reverse(s);
+    reverse_recursively(s, 0, strlen(s) - 1);
 }

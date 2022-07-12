@@ -1,14 +1,14 @@
 //* gcc -o output main.c && output
 
-#include <stdio.h>
-#include <math.h>
-#include "printd.c"
 #include "itoa.c"
+#include "printd.c"
+#include <math.h>
+#include <stdio.h>
 
 void itoa(int n, char s[]);
 
 int main() {
-    char s[100];
+    // char s[100];
 
     // int n1 = -123;
     // itoa(n1, s);
@@ -28,9 +28,31 @@ int main() {
     // printd(n4);
     // printf("\n");
 
-    int n5 = -123;
-    itoa_recursively(n5, s);
-    printf("%d -> %s\n", n5, s);
+    int n5 = 123;
+    char s5[100];
+    itoa_recursively(n5, s5);
+    printf("\n%d -> %s = %s\n\n\n", n5, s5, (strcmp(s5, "123") ? "FALSE" : "TRUE"));
+
+    int n6 = 1234;
+    char s6[100];
+    itoa_recursively(n6, s6);
+    printf("\n%d -> %s = %s\n\n\n", n6, s6, (strcmp(s6, "1234") ? "FALSE" : "TRUE"));
+
+    int n7 = -123;
+    char s7[100];
+    itoa_recursively(n7, s7);
+    printf("\n%d -> %s = %s\n\n\n", n7, s7, (strcmp(s7, "-123") ? "FALSE" : "TRUE"));
+
+    int n8 = -1234;
+    char s8[100];
+    itoa_recursively(n8, s8);
+    printf("\n%d -> %s = %s\n\n\n", n8, s8, (strcmp(s8, "-1234") ? "FALSE" : "TRUE"));
 
     return 0;
+}
+
+void emptystring(char s[]) {
+    for (int i = 0; i < strlen(s); i++) {
+        s[i] = ' ';
+    }
 }
