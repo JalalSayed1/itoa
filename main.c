@@ -28,20 +28,21 @@ int main() {
     // printd(n4);
     // printf("\n");
 
-    int n5 = 123;
-    char s5[100];
-    itoa_recursively(n5, s5);
-    printf("\n%d -> %s = %s\n\n\n", n5, s5, (strcmp(s5, "123") ? "FALSE" : "TRUE"));
+    //* tests for recursive itoa():
+    // int n5 = 123;
+    // char s5[100];
+    // itoa_recursively(n5, s5);
+    // printf("\n%d -> %s = %s\n\n\n", n5, s5, (strcmp(s5, "123") ? "FALSE" : "TRUE"));
 
-    int n6 = 1234;
-    char s6[100];
-    itoa_recursively(n6, s6);
-    printf("\n%d -> %s = %s\n\n\n", n6, s6, (strcmp(s6, "1234") ? "FALSE" : "TRUE"));
+    // int n6 = 1234;
+    // char s6[100];
+    // itoa_recursively(n6, s6);
+    // printf("\n%d -> %s = %s\n\n\n", n6, s6, (strcmp(s6, "1234") ? "FALSE" : "TRUE"));
 
-    int n7 = -123;
-    char s7[100];
-    itoa_recursively(n7, s7);
-    printf("\n%d -> %s = %s\n\n\n", n7, s7, (strcmp(s7, "-123") ? "FALSE" : "TRUE"));
+    // int n7 = -123;
+    // char s7[100];
+    // itoa_recursively(n7, s7);
+    // printf("\n%d -> %s = %s\n\n\n", n7, s7, (strcmp(s7, "-123") ? "FALSE" : "TRUE"));
 
     int n8 = -1234;
     char s8[100];
@@ -49,10 +50,4 @@ int main() {
     printf("\n%d -> %s = %s\n\n\n", n8, s8, (strcmp(s8, "-1234") ? "FALSE" : "TRUE"));
 
     return 0;
-}
-
-void emptystring(char s[]) {
-    for (int i = 0; i < strlen(s); i++) {
-        s[i] = ' ';
-    }
 }
